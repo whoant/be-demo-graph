@@ -24,6 +24,10 @@ BookSchema.statics.getBooksOfAuthor = function (authorId) {
 
 BookSchema.statics.getAllBooks = function () {
 	return this.find();
-}
+};
+
+BookSchema.statics.findBook = function (bookId) {
+	return this.findById(bookId);
+};
 
 module.exports = model('books', BookSchema);

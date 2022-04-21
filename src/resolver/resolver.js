@@ -4,16 +4,16 @@ const Book = require('../models/book.model');
 const resolvers = {
 	Query: {
 		book: async (parent, args) => {
-			return Book.findById(args.id);
+			return Book.findBook(args.id);
 		},
 		books: async () => {
 			return Book.getAllBooks();
 		},
 		author: async (parent, args) => {
-			return Author.findById(args.id);
+			return Author.findAuthor(args.id);
 		},
 		authors: async () => {
-			return Author.find();
+			return Author.getAllAuthors();
 		},
 	},
 
@@ -25,7 +25,7 @@ const resolvers = {
 
 	Book: {
 		author: async (parent, args) => {
-			return Author.findById(parent.authorId);
+			return Author.findAuthor(parent.authorId);
 		}
 	},
 
