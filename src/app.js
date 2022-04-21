@@ -5,9 +5,9 @@ const loaders = require('./loaders');
 
 const app = express();
 
-loaders(app);
-app.listen({ port: PORT }, () => {
-    console.log(`Connect ready at http://localhost:${PORT}`);
-});
-
-
+(async () => {
+	await loaders(app);
+	app.listen({ port: PORT }, () => {
+		console.log(`Connect ready at http://localhost:${PORT}`);
+	});
+})();
