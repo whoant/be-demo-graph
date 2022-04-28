@@ -6,7 +6,7 @@ const router = Router();
 
 router.get('/', BookController.getAllBook);
 
-router.get('/', BookController.createBook);
+router.post('/', BookController.createBook);
 
 
 module.exports = router;
